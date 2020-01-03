@@ -19,3 +19,24 @@ console.log(Number.isNaN(NaN)); // true
 Подробнее о isNaN() и Number.isNaN() можно прочитать здесь:
 
 https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/isNaN
+
+
+NaN невозможно сравнить с другими значениями через ==, ===, !== и !=, т.к. оно не равно ничему другому, даже самому себе:
+
+console.log('cat' === NaN); // false
+console.log(NaN === NaN); // false
+console.log(NaN == NaN); // false
+Поэтому для проверки нужно использовать isNaN() или Number.isNaN(), чтобы преобразовать значение сначала в true или false, а затем производить сравнение:
+
+console.log(isNaN('19') === true); // false,
+console.log(isNaN('Hello') === true); // true
+console.log(isNaN('Hello') === isNaN(NaN)); // true
+NaN уникальное значение, и только для него в JavaScript следующие неравенства вернут true:
+
+console.log(NaN != NaN); // true
+console.log(NaN !== NaN); // true
+Такое сравнение можно использовать как альтернативный вариант для сравнения с NaN.
+
+Подробнее о isNaN() и Number.isNaN() можно прочитать здесь:
+
+https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/isNaN
