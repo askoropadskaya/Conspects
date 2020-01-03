@@ -1,0 +1,21 @@
+Есть 2 способа проверить, что переданное значение является Not-A-Number (NaN) - это Number.isNaN() и isNaN(). И они отличаются.
+
+Конспект
+Несмотря на то, что NaN является 'не числом', но его тип определяется как number, проверить тип переданных данных через оператор typeof в таком случае не получится.
+
+Для проверки такого значения необходимо использовать специальную функцию и метод:
+
+Функция isNaN(value) преобразует значение в число и проверяет, является ли оно NaN:
+console.log(isNaN('23')); // false
+console.log(isNaN('fun')); // true
+Метод Number.isNaN(value) определяет, является ли переданное значение NaN:
+console.log(Number.isNaN('23')); // false
+console.log(Number.isNaN('fun')); // false
+Number.isNaN() не преобразовывает переданный в него аргумент в число, т.е. данный метод вернёт true только для числовых значений, имеющих значение NaN.
+
+console.log(isNaN(undefined)); // true
+console.log(Number.isNaN(undefined)); // false
+console.log(Number.isNaN(NaN)); // true
+Подробнее о isNaN() и Number.isNaN() можно прочитать здесь:
+
+https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/isNaN
